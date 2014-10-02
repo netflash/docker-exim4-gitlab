@@ -425,6 +425,7 @@ begin routers
 
 catch_all_outgoing:
  driver = redirect
+ domains = +local_domains
  data = %REDIRECT_TO%
 
 .ifdef MAIN_ALLOW_DOMAIN_LITERALS
