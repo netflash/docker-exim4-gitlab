@@ -39,7 +39,7 @@ case "${1}" in
       ;;
     init)
       setup
-      exec /usr/bin/svscanboot 
+      exec /usr/sbin/exim4 -bdf -v -q 5m -d+all
       ;;
   *)
     echo "export LOCAL_DOMAINS=..."

@@ -5,9 +5,7 @@ MAINTAINER alex@romanov.ws
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y daemontools
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y locales-all locales 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y daemontools-run
 
 # === debug tools start ===
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y net-tools 
@@ -35,7 +33,6 @@ VOLUME /var/spool/exim4
 
 WORKDIR /
 
-COPY exim.service   /etc/service/exim
 COPY exim4.conf.tpl /etc/exim4/exim4.conf.tpl
 COPY entry.sh       /entry.sh
 
